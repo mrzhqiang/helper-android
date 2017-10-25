@@ -9,7 +9,7 @@ import java.security.SecureRandom;
 public final class AccountHelper {
 
   private static final String CHARS =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456780+-/#$!?";
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   private static final SecureRandom RANDOM = new SecureRandom();
 
   /** 创建传入长度的字符串密码 */
@@ -20,4 +20,5 @@ public final class AccountHelper {
     }
     return builder.toString();
   }
+
 }
