@@ -1,7 +1,9 @@
 package cn.mrzhqiang.helper;
 
 import android.support.annotation.IntRange;
+import android.support.annotation.NonNull;
 import java.security.SecureRandom;
+import java.util.Arrays;
 
 /**
  * 简单的账户辅助工具
@@ -21,4 +23,22 @@ public final class AccountHelper {
     return builder.toString();
   }
 
+  public static String[] autoUsernames(@NonNull String prefix, @IntRange(from = 0) int startIndex,
+      @IntRange(from = 2) int count) {
+    String[] usernames = new String[count];
+    int length = prefix.length();
+    StringBuilder prefixBuilder = new StringBuilder(prefix);
+    for (int number = 6 - length; number > 0; number--) {
+      prefixBuilder.append("a");
+    }
+    prefix = prefixBuilder.toString();
+    for (int i = 0; i < count; i++) {
+      usernames[i] = prefix + (startIndex + i);
+    }
+    return usernames;
+  }
+
+  public static void main(String[] args) {
+    System.out.println(Arrays.toString(autoUsernames("", 1, 10)));
+  }
 }
