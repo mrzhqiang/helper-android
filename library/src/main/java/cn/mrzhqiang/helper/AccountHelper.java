@@ -16,7 +16,7 @@ public final class AccountHelper {
   public static String createPassword(@IntRange(from = 1) int length) {
     StringBuilder builder = new StringBuilder(length);
     for (int i = 0; i < length; i++) {
-      builder.append(CHARS.charAt(RANDOM.nextInt(CHARS.length() - 1)));
+      builder.append(CHARS.charAt(RANDOM.nextInt(CHARS.length())));
     }
     return builder.toString();
   }
