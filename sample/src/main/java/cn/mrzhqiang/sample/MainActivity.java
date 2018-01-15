@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     avatar = (ImageView) findViewById(R.id.avatar);
 
     // 推荐使用下面注释掉的方法来处理
-    avatar.setImageBitmap(NameHelper.get("mrzhqiang", getPixel(56)));
+    avatar.setImageBitmap(NameHelper.circleBitmapOf("mrzhqiang", getPixel(56)));
     //new BitmapWorkerTask(avatar).execute("2222");
 
     content = (TextView) findViewById(R.id.content);
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override protected Bitmap doInBackground(String... params) {
-      return NameHelper.get(params[0], getPixel(56));
+      return NameHelper.bitmapOf(params[0], getPixel(56));
     }
 
     @Override protected void onPostExecute(Bitmap bitmap) {

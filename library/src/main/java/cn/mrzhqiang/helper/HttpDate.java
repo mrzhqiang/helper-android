@@ -10,6 +10,7 @@ import java.util.TimeZone;
 /**
  * Best-effort parser for HTTP dates.
  * Copy from okhttp-3.8.0
+ * @author okhttp-3.8.0
  */
 public final class HttpDate {
   /**
